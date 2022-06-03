@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singleproduct</title>
+</head>
+<body>
+    <h1>name: {{product.p_name}}</h1>
+    <h5>Description: {{product.p_description}}</h5>
+    <h5>Price: {{product.p_price}}</h5>
+    <h5>Category: {{product.category}}</h5>
+    <img src="{{product.p_image.url}}" alt="{{product.name}}" width="300" height="300">
+    <h5>Availability: {{product.stock}}</h5>
+    <h4><a href="{% url 'add_to_cart' product.id %}">add to cart</a></h4>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order</title>
+</head>
+<body>
+
+    {% for product in all_products %}
+    <h3>{{product.p_name}} - {{product.p_price}}  </h3>
+    {% endfor %}
+    total price: {{totalPrice}}
+
+    <form action="#" method="post" >
+        {% csrf_token %}
+        <input type="text" name="shipping_address" placeholder="shipping_address">
+        <input type="text" name="zip_code" placeholder="zip_code">
+        <input type="text" name="shipping_city" placeholder="shipping_city">
+        <input type="text" name="shipping_district" placeholder="shipping_district">
+        <input type="text" name="shipping_divition" placeholder="shipping_divition">
+        <input type="text" name="phone_number" placeholder="phone_number">
+        <input type="text" name="email" placeholder="email">
+        
+        <input type="submit" value="CheakOut" />
+
+    </form>
+    
+</body>
+</html>

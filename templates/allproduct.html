@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all product</title>
+</head>
+<body>
+    <h1>here is the all product</h1>
+    <h4>{{username}}</h4>
+    <a href="{%url 'viewprofile'%}">view profile </a><br/><br>
+    <a href="{% url 'viewcart' user.id %}">view Cart </a><br/><br>
+    <form action="#" method="post">
+        {%csrf_token%}
+        <input type="text" name="search" placeholder="Search a product">
+        <input type="submit" value="search">
+    </form>
+    {% for item in all_product %}
+    <h1>name: {{item.p_name}}</h1>
+    <h5>Description: {{item.p_description}}</h5>
+    <h5>Price: {{item.p_price}}</h5>
+    <h5>Category: {{item.category}}</h5>
+    <img src="{{item.p_image.url}}" alt="{{item.name}}" width="300" height="300">
+    <h5>Availability: {{item.stock}}</h5>
+    <a href="{% url 'singleproduct' item.id %}">view product details </a><br/><br>
+    {% endfor %} 
+    
+</body>
+</html>
